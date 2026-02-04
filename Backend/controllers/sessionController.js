@@ -7,7 +7,7 @@ const Question = require("../models/Question");
 const createSession = async (req, res) => {
   try {
     const { role, experience, topicsToFocus, description, questions } = req.body;
-    const userId = req.user.id;  // ✅ Matches your protect middleware (req.user.id)
+    const userId = req.user.id;  
 
     const session = await Session.create({
       user: userId,
@@ -49,7 +49,7 @@ const createSession = async (req, res) => {
 // @access  Private
 const getMySessions = async (req, res) => {
   try {
-    const sessions = await Session.find({ user: req.user.id })  // ✅ req.user.id
+    const sessions = await Session.find({ user: req.user.id })  
       .sort({ createdAt: -1 })
       .populate("questions");  // ✅ Fixed: string path
 
@@ -71,12 +71,12 @@ const getSessionById = async (req, res) => {
     const session = await Session.findById(req.params.id)
       .populate({
         path: "questions",
-        options: { sort: { isPinned: -1, createdAt: 1 }, },  // ✅ Assuming Question has isPinned
+        options: { sort: { isPinned: -1, createdAt: 1 }, }, 
       })
       .exec();
 
     if (!session) {
-      return res.status(404).json({  // ✅ 404 better for not found
+      return res.status(404).json({  
         success: false,
         message: "Session not found",
       });
@@ -105,14 +105,14 @@ const deleteSession = async (req, res) => {
       });
     }
 
-    if (session.user.toString() !== req.user.id) {  // ✅ Fixed: req.user.id vs params.id
+    if (session.user.toString() !== req.user.id) {  
       return res.status(401).json({
         success: false,
         message: "Not authorized to delete this session",
       });
     }
 
-    await Question.deleteMany({  // ✅ Fixed: Question model
+    await Question.deleteMany({  
       session: session._id,
     });
 
