@@ -27,11 +27,11 @@ const LandingPage = () => {
 
     return (
         <>
-            <div className='w-full min-h-screen bg-[#fffcef]'>
+            <div className='w-full min-h-screen bg-[#fffcef] '>
                 {/* 1. HERO WRAPPER */}
-                <div className='relative w-full bg-amber-200/10'>
+                <div className='relative w-full bg-amber-200/10 ml-7 mr-7'>
                     <div className='container mx-auto px-6 pt-8 pb-20 relative z-10'>
-                        <header className='flex justify-between items-center mb-20'>
+                        <header className='flex justify-between items-center mb-20 mr-10'>
                             <div className='text-2xl text-black font-bold tracking-tight'>
                                 InterviewPrep AI
                             </div>
@@ -39,7 +39,7 @@ const LandingPage = () => {
                                 <ProfileCard />  
                             ) : (
                                 <button
-                                    className='bg-gradient-to-r from-[#FF9324] to-[#e99a4b] text-sm rounded-full hover:shadow-lg transition-all cursor-pointer border border-white/50 text-white px-8 py-2.5 font-semibold'
+                                    className='bg-gradient-to-r from-[#FF9324] to-[#e99a4b] text-sm rounded-full hover:shadow-lg transition-all cursor-pointer border border-white/50 text-white px-8 py-2.5 font-semibold '
                                     onClick={() => setOpenAuthModal(true)}
                                 >
                                     Login / Sign Up
