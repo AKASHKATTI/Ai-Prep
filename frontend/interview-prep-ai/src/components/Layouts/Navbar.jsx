@@ -1,22 +1,27 @@
-import React from 'react'
-import ProfileCard from '../cards/ProfileCard'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import ProfileCard from "../cards/ProfileCard";
 
 const Navbar = () => {
-
   return (
-    <div className='h-16 bg-white border border-b border-gray-200/50 backdrop-blur-[2px] py-2.5 z-40 px-4 md:px-0 sticky top-0 '>
-      <div className='container mx-auto flex items-center justify-between gap-5'>
-        <Link to={"/"}>
-        <h2 className='text-lg md:text-xl font-medium text-black leading-5'>
-          Interview
-        </h2>
-        {/* <img src="/logo.png" width={150} className='absolute  top-0 left-0 ml-7 -mt-5' alt="" /> */}
-        </Link>
-        <ProfileCard/>
-      </div>
-    </div>
-  )
-}
+    <header className="sticky top-0 z-40 border-b border-gray-200/50 bg-white/80 backdrop-blur">
+      {/* Container with ALWAYS-on horizontal padding */}
+      <div className="container mx-auto h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex h-full items-center justify-between">
+          
+          {/* Logo / Title */}
+          <Link to="/">
+            <h2 className="text-lg md:text-xl font-medium text-black leading-5">
+              Interview
+            </h2>
+          </Link>
 
-export default Navbar
+          {/* Profile */}
+          <ProfileCard />
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
