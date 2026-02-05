@@ -10,7 +10,7 @@ import moment from 'moment';
 import Modal from "../../components/Modal"
 import SummaryCard from '../../components/cards/SummaryCard';
 import CreateSessionForm from './CreateSessionForm';
-// import DeleteAlertContent from '../../components/DeleteAlertContent';
+import DeleteAlertContent from '../../components/DeleteAlertContent';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -114,7 +114,7 @@ const Dashboard = () => {
       </Modal>
 
       {/* Delete Alert Modal */}
-      {/* <Modal
+      <Modal
         isOpen={openDeleteAlert?.open}
         onClose={() => {
           setOpenDeleteAlert({ open: false, data: null });
@@ -127,7 +127,7 @@ const Dashboard = () => {
             onDelete={() => deleteSession(openDeleteAlert.data)}
           />
         </div>
-      </Modal> */}
+      </Modal>
     </DashboardLayout>
   );
 };
