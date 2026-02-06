@@ -1,7 +1,7 @@
 import React, { useState , useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Inputs/Input';
-import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector ';
+// import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector ';
 import { UserContext } from '../../context/UserContext';
 import { FaUpload } from 'react-icons/fa';
 import axiosInstance from '../../utils/axiosInstance';
@@ -87,7 +87,7 @@ const SignUp = ( {setCurrentPage } ) => {
 
       <form onSubmit={handleSignUp}>
 
-        <ProfilePhotoSelector  image={profilePic} setImage = {setProfilePic} />
+        {/* <ProfilePhotoSelector  image={profilePic} setImage = {setProfilePic} /> */}
 
         <Input
          type="text"

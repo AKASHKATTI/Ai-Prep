@@ -2,7 +2,7 @@ require('dotenv').config();
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { questionAnswerPrompt, conceptExplainPrompt } = require("../utils/prompts");
 
-// Initialize once outside handlers
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // @desc Generate interview questions and answers using Gemini

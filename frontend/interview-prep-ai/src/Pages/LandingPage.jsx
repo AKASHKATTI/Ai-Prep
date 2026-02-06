@@ -33,7 +33,7 @@ const LandingPage = () => {
                     <div className='container mx-auto px-6 pt-8 pb-20 relative z-10'>
                         <header className='flex justify-between items-center mb-20 mr-10'>
                             <div className='text-2xl text-black font-bold tracking-tight'>
-                                InterviewPrep AI
+                                prepAI
                             </div>
                             {user ? (
                                 <ProfileCard />  
